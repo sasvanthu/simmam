@@ -54,9 +54,9 @@ function Index() {
         <Particles count={20} className="!fixed inset-0 -z-10" />
         <Hero />
         <DashboardLiveScores />
+        <Teams />
         <Showcase3D />
         <Leaderboard />
-        <Teams />
         <PastYears />
         <Gallery />
         <Faculty />
