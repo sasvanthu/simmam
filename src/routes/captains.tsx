@@ -71,13 +71,13 @@ function CaptainsPage() {
 
                   <div className="relative flex items-center gap-4 mb-6">
                     <div
-                      className="w-16 h-16 rounded-2xl grid place-items-center texture-overlay overflow-hidden"
+                      className="w-16 h-16 rounded-full grid place-items-center bg-white/5 border-2 overflow-hidden"
                       style={{
-                        background: h.gradient,
+                        borderColor: h.accent,
                         boxShadow: `0 0 32px ${h.glow}`,
                       }}
                     >
-                      <Shield className="w-7 h-7 text-background/90" />
+                      <img src={h.logo} alt={`${h.name} crest`} className="w-full h-full object-contain p-2.5" />
                     </div>
                     <div>
                       <div className="text-[10px] tracking-[0.3em] text-foreground/50">
@@ -134,21 +134,17 @@ function CaptainsPage() {
             
             <div className="flex flex-wrap justify-center gap-4">
               {[
-                { name: "Sasvanthu", role: "Team Lead" },
-                { name: "Roshini", role: "Program Analyst" },
-                { name: "Moniga", role: "Web Architect" },
-                { name: "Suvedhan", role: "Software Developer" },
-                { name: "Sudharsan", role: "Software Developer" }
+                { name: "Sasvanthu G", role: "Team Lead" },
+                { name: "Moniga V", role: "Technical Architect" },
+                { name: "Roshini R", role: "Product Analyst" },
+                { name: "Suvedhan G", role: "Full-Stack Developer" },
+                { name: "Sudharsan R K", role: "Software Developer" }
               ].map((member) => (
-                <div key={member.name} className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-auto lg:flex-1 min-w-[200px] max-w-[280px] text-left">
-                  <PersonCard
-                    role={member.role}
-                    name={member.name}
-                    year=""
-                    phone=""
-                    accent="#E0E0E0"
-                    gradient="linear-gradient(135deg, #4B4B4B, #1A1A1A)"
-                  />
+                <div key={member.name} className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-auto lg:flex-1 min-w-[200px] max-w-[280px]">
+                  <div className="relative glass rounded-2xl p-5 flex flex-col items-center justify-center text-center h-full border border-white/5 hover:border-gold/30 transition-colors">
+                    <div className="text-[10px] tracking-[0.15em] text-gold/80 mb-2">{member.role.toUpperCase()}</div>
+                    <div className="font-semibold truncate w-full text-foreground/90">{member.name}</div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -176,27 +172,13 @@ function PersonCard({
   accent: string;
   gradient: string;
 }) {
-  const initials = name
-    .split(" ")
-    .map((s) => s[0])
-    .join("")
-    .slice(0, 2);
   return (
     <div className="relative glass rounded-2xl p-4 overflow-hidden">
-      <div className="flex items-center gap-3">
-        <div
-          className="w-14 h-14 rounded-full grid place-items-center font-display font-bold text-lg shrink-0 texture-overlay overflow-hidden"
-          style={{
-            background: gradient,
-            boxShadow: `0 0 20px ${accent}80`,
-          }}
-        >
-          {initials}
-        </div>
+      <div className="flex items-center">
         <div className="min-w-0">
-          <div className="text-[10px] tracking-[0.15em] text-gold/80 leading-tight">{role.toUpperCase()}</div>
+          <div className="text-[10px] tracking-[0.15em] text-gold/80 leading-tight mb-1">{role.toUpperCase()}</div>
           <div className="font-semibold truncate">{name}</div>
-          {year && <div className="text-xs text-foreground/55">{year}</div>}
+          {year && <div className="text-xs text-foreground/55 mt-0.5">{year}</div>}
         </div>
       </div>
       {phone && (

@@ -38,14 +38,14 @@ export function Teams() {
                   >
                     <div className="flex items-start gap-4">
                       <div
-                        className="shrink-0 w-20 h-20 rounded-2xl grid place-items-center font-display font-bold text-2xl shadow-lg [transform-style:preserve-3d] texture-overlay overflow-hidden"
+                        className="shrink-0 w-20 h-20 rounded-full grid place-items-center shadow-lg [transform-style:preserve-3d] bg-white/5 border-2 overflow-hidden"
                         style={{
-                          background: t.gradient,
                           boxShadow: `0 0 32px ${t.glow}, inset 0 1px 0 rgba(255,255,255,0.2)`,
                           transform: "translateZ(30px)",
+                          borderColor: t.accent,
                         }}
                       >
-                        <Shield className="w-9 h-9 text-background/90" />
+                        <img src={t.logo} alt={`${t.name} crest`} className="w-full h-full object-contain p-3" />
                       </div>
                       <div className="flex-1">
                         <div className="text-[10px] tracking-[0.3em] text-foreground/50">

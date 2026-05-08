@@ -45,6 +45,7 @@ type HouseScore = {
   accent: string;
   gradient: string;
   breakdown: { winners: number; runners: number; participation: number };
+  logo: string;
 };
 
 export function DashboardLiveScores() {
@@ -61,6 +62,7 @@ export function DashboardLiveScores() {
         accent: h.accent,
         gradient: h.gradient,
         breakdown: { ...h.breakdown },
+        logo: h.logo,
       }))
       .sort((a, b) => a.name.localeCompare(b.name))
   );
@@ -176,21 +178,12 @@ export function DashboardLiveScores() {
                       </span>
                       
                       <div
-                        className="w-10 h-10 rounded-lg flex items-center justify-center border-2"
+                        className="w-10 h-10 rounded-full flex items-center justify-center border-2 overflow-hidden bg-white/5"
                         style={{
-                          backgroundColor: `${house.accent}20`,
                           borderColor: house.accent,
-                          color: house.accent,
                         }}
                       >
-                        {houseElementIcons[house.element] ? (
-                          (() => {
-                            const Icon = houseElementIcons[house.element];
-                            return <Icon className="w-5 h-5" />;
-                          })()
-                        ) : (
-                          <Home className="w-5 h-5" />
-                        )}
+                        <img src={house.logo} alt={`${house.name} crest`} className="w-full h-full object-contain p-1.5" />
                       </div>
 
                       <div className="flex flex-col">

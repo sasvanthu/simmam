@@ -10,13 +10,7 @@ const faculty = [
   { name: "Dr. T. Bhaskar", role: "Logistics Lead", dept: "CIVIL", phone: "+91 98765 66666", email: "bhaskar@simats.edu" },
 ];
 
-const initials = (n: string) =>
-  n
-    .replace("Dr. ", "")
-    .split(" ")
-    .map((s) => s[0])
-    .join("")
-    .slice(0, 2);
+
 
 export function Faculty() {
   return (
@@ -41,25 +35,7 @@ export function Faculty() {
                     "radial-gradient(circle at 50% 0%, oklch(0.78 0.16 80 / 0.3), transparent 60%)",
                 }}
               />
-              <div className="relative inline-block">
-                <div className="absolute inset-0 rounded-full animate-spin-slow">
-                  <svg viewBox="0 0 100 100" className="w-full h-full">
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r="48"
-                      fill="none"
-                      stroke="oklch(0.78 0.16 80 / 0.6)"
-                      strokeWidth="0.6"
-                      strokeDasharray="2 6"
-                    />
-                  </svg>
-                </div>
-                <div className="w-24 h-24 rounded-full grid place-items-center bg-gradient-to-br from-[var(--crimson)] to-[var(--gold)] font-display text-2xl font-bold text-background shadow-[var(--shadow-glow-gold)] m-2">
-                  {initials(f.name)}
-                </div>
-              </div>
-              <div className="relative mt-3">
+              <div className="relative">
                 <div className="font-display text-xl font-bold text-gradient-gold">{f.name}</div>
                 <div className="text-xs tracking-[0.25em] text-foreground/55 mt-1">
                   {f.role.toUpperCase()} • {f.dept}
