@@ -90,9 +90,18 @@ function CaptainsPage() {
                     </div>
                   </div>
 
+                  <div className="relative mb-4 glass rounded-xl px-4 py-3 flex items-center justify-between text-sm">
+                    <div>
+                      <div className="text-[10px] tracking-[0.25em] text-foreground/50">
+                        FACULTY COORDINATOR
+                      </div>
+                      <div className="text-foreground/90">{h.faculty.name}</div>
+                    </div>
+                  </div>
+
                   <div className="relative grid sm:grid-cols-2 gap-4">
                     <PersonCard
-                      role="Captain"
+                      role="Students Captain"
                       name={h.captain.name}
                       year={h.captain.year}
                       phone={h.captain.phone}
@@ -100,7 +109,7 @@ function CaptainsPage() {
                       gradient={h.gradient}
                     />
                     <PersonCard
-                      role="Vice Captain"
+                      role="Students Vice Captain"
                       name={h.vice.name}
                       year={h.vice.year}
                       phone={h.vice.phone}
@@ -108,25 +117,41 @@ function CaptainsPage() {
                       gradient={h.gradient}
                     />
                   </div>
-
-                  <div className="relative mt-4 glass rounded-xl px-4 py-3 flex items-center justify-between text-sm">
-                    <div>
-                      <div className="text-[10px] tracking-[0.25em] text-foreground/50">
-                        FACULTY COORDINATOR
-                      </div>
-                      <div className="text-foreground/90">{h.faculty.name}</div>
-                    </div>
-                    <a
-                      href={`tel:${h.faculty.phone.replace(/\s/g, "")}`}
-                      className="inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold/80"
-                    >
-                      <Phone className="w-3.5 h-3.5" />
-                      {h.faculty.phone}
-                    </a>
-                  </div>
                 </div>
               </Tilt3D>
             ))}
+          </div>
+
+          {/* Web Development Team Section */}
+          <div className="mt-24 text-center">
+            <div className="inline-flex items-center gap-3 mb-8">
+              <span className="h-px w-10 bg-gradient-to-r from-transparent to-[var(--gold)]" />
+              <span className="text-[10px] md:text-xs tracking-[0.4em] text-gold/80">
+                WEB DEVELOPMENT TEAM
+              </span>
+              <span className="h-px w-10 bg-gradient-to-l from-transparent to-[var(--gold)]" />
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              {[
+                { name: "Sasvanthu", role: "Team Lead" },
+                { name: "Roshini", role: "Program Analyst" },
+                { name: "Moniga", role: "Web Architect" },
+                { name: "Suvedhan", role: "Software Developer" },
+                { name: "Sudharsan", role: "Software Developer" }
+              ].map((member) => (
+                <div key={member.name} className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-auto lg:flex-1 min-w-[200px] max-w-[280px] text-left">
+                  <PersonCard
+                    role={member.role}
+                    name={member.name}
+                    year=""
+                    phone=""
+                    accent="#E0E0E0"
+                    gradient="linear-gradient(135deg, #4B4B4B, #1A1A1A)"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </main>
@@ -142,6 +167,7 @@ function PersonCard({
   year,
   phone,
   accent,
+  gradient,
 }: {
   role: string;
   name: string;
@@ -168,17 +194,19 @@ function PersonCard({
           {initials}
         </div>
         <div className="min-w-0">
-          <div className="text-[10px] tracking-[0.3em] text-gold/80">{role.toUpperCase()}</div>
+          <div className="text-[10px] tracking-[0.15em] text-gold/80 leading-tight">{role.toUpperCase()}</div>
           <div className="font-semibold truncate">{name}</div>
-          <div className="text-xs text-foreground/55">{year}</div>
+          {year && <div className="text-xs text-foreground/55">{year}</div>}
         </div>
       </div>
-      <a
-        href={`tel:${phone.replace(/\s/g, "")}`}
-        className="mt-3 inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold/80"
-      >
-        <Phone className="w-3 h-3" /> {phone}
-      </a>
+      {phone && (
+        <a
+          href={`tel:${phone.replace(/\s/g, "")}`}
+          className="mt-3 inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold/80"
+        >
+          <Phone className="w-3 h-3" /> {phone}
+        </a>
+      )}
     </div>
   );
 }
