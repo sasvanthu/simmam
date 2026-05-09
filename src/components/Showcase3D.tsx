@@ -6,70 +6,60 @@ const orbs = [
   {
     image: "/awards/overall_winner.png",
     label: "Overall Winner",
-    sub: "The ultimate champions",
     color: "oklch(0.85 0.17 85)",
     glow: "oklch(0.88 0.18 88)",
   },
   {
     image: "/awards/overall_runner.png",
     label: "Overall Runner",
-    sub: "Silver glory",
     color: "oklch(0.85 0.02 90)",
     glow: "oklch(0.92 0.02 90)",
   },
   {
     image: "/awards/best_tech.png",
-    label: "Best Tech",
-    sub: "Masters of innovation",
+    label: "Best Tech Team",
     color: "oklch(0.65 0.2 250)",
     glow: "oklch(0.7 0.22 255)",
   },
   {
     image: "/awards/best_nontech.png",
-    label: "Best Non-Tech",
-    sub: "Creative excellence",
+    label: "Best Non-Tech Team",
     color: "oklch(0.75 0.2 30)",
     glow: "oklch(0.8 0.22 35)",
   },
   {
     image: "/awards/cultural.png",
-    label: "Cultural",
-    sub: "Soul of SIMMAM",
+    label: "Best Cultural Team",
     color: "oklch(0.62 0.14 50)",
     glow: "oklch(0.72 0.18 55)",
   },
   {
     image: "/awards/enthusiastic_team.png",
-    label: "Enthusiastic Team",
-    sub: "The loudest tribe",
+    label: "Best Enthusiastic Team",
     color: "oklch(0.65 0.22 27)",
     glow: "oklch(0.7 0.25 25)",
   },
   {
     image: "/awards/best_sports.png",
-    label: "Best Sports",
-    sub: "Athletic dominance",
+    label: "Best Sports Team",
     color: "oklch(0.8 0.15 65)",
     glow: "oklch(0.85 0.18 70)",
   },
   {
     image: "/awards/best_student.jpeg",
-    label: "Best Student",
-    sub: "Academic & extra-curricular",
+    label: "Best Student Activity Team",
     color: "oklch(0.7 0.15 220)",
     glow: "oklch(0.75 0.18 225)",
   },
   {
     image: "/awards/max_participation.jpeg",
-    label: "Maximum Participation",
-    sub: "Strength in numbers",
+    label: "Maximum Participation Team",
     color: "oklch(0.82 0.18 95)",
     glow: "oklch(0.88 0.2 95)",
   },
   {
     image: "/awards/active_dept.jpeg",
-    label: "Most Active Dept",
-    sub: "Leading the charge",
+    label: "Most Active Department Team",
     color: "oklch(0.68 0.18 160)",
     glow: "oklch(0.75 0.2 165)",
   },
@@ -146,12 +136,6 @@ export function Showcase3D() {
                   style={{ transform: "translateZ(40px)" }}
                 >
                   {o.label}
-                </div>
-                <div
-                  className="text-xs text-foreground/60 mt-1"
-                  style={{ transform: "translateZ(30px)" }}
-                >
-                  {o.sub}
                 </div>
 
                 {/* corner sparkle */}

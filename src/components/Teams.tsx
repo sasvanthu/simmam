@@ -111,7 +111,7 @@ export function Teams() {
             to="/captains"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm glass-strong neon-border text-gold hover:bg-white/5 transition"
           >
-            Meet All Captains & Vice Captains
+            Meet The Elite Crew
           </Link>
         </div>
       </div>

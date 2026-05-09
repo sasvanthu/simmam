@@ -15,7 +15,7 @@ const leftLinks = [
 
 const rightLinks = [
   { href: "/events",    label: "Events" },
-  { href: "/captains",  label: "Captains" },
+  { href: "/captains",  label: "Crew" },
   { href: "/#archive",  label: "Gallery" },
   { href: "/#contact",  label: "Contact" },
 ];

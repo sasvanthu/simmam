@@ -9,13 +9,13 @@ import { houses } from "@/lib/houses";
 export const Route = createFileRoute("/captains")({
   head: () => ({
     meta: [
-      { title: "Captains & Vice Captains — SIMMAM 2026" },
+      { title: "The Elite Crew — SIMMAM 2026" },
       {
         name: "description",
         content:
-          "Meet the captains, vice captains and faculty coordinators of all six SIMMAM 2026 houses — Rudras, Suryas, Dronas, Agniyas, Marutas and Vajraas.",
+          "Meet the crew and faculty coordinators of all six SIMMAM 2026 houses — Rudras, Suryas, Dronas, Agniyas, Marutas and Vajraas.",
       },
-      { property: "og:title", content: "Captains of SIMMAM 2026" },
+      { property: "og:title", content: "The Elite Crew of SIMMAM 2026" },
       {
         property: "og:description",
         content: "The leaders of Rudras, Suryas, Dronas, Agniyas, Marutas and Vajraas.",
@@ -51,12 +51,8 @@ function CaptainsPage() {
               <span className="h-px w-10 bg-gradient-to-l from-transparent to-[var(--gold)]" />
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-bold text-gradient-fire">
-              Captains & Vice Captains
+              The Elite Crew
             </h1>
-            <p className="mt-4 text-foreground/70">
-              The faces leading every house into battle. Six captains. Six right hands. One
-              SIMMAM.
-            </p>
           </div>
 
           {/* Core Team Section */}
