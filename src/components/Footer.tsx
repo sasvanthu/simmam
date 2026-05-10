@@ -65,7 +65,7 @@ export function Footer() {
           <div>
             <h4 className="font-display text-sm tracking-[0.3em] text-gold/80 mb-4">QUICK LINKS</h4>
             <ul className="space-y-2 text-sm text-foreground/70">
-              {["Home", "Teams", "Events", "Gallery", "Live Scores", "Faculty"].map((l) => (
+              {["Home", "Teams", "Events", "Gallery", "Live Scores"].map((l) => (
                 <li key={l}>
                   <a
                     href={

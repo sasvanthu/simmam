@@ -6,7 +6,7 @@ import { DashboardLiveScores } from "@/components/DashboardLiveScores";
 import { Leaderboard } from "@/components/Leaderboard";
 import { Teams } from "@/components/Teams";
 import { Showcase3D } from "@/components/Showcase3D";
-import { Faculty } from "@/components/Faculty";
+
 import { PastYears } from "@/components/PastYears";
 import { Footer } from "@/components/Footer";
 import { Loader } from "@/components/Loader";
@@ -57,7 +57,7 @@ function Index() {
         <Showcase3D />
         <Leaderboard />
         <PastYears />
-        <Faculty />
+
       </main>
       <Footer />
     </div>

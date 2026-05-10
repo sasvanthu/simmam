@@ -15,6 +15,8 @@ export type House = {
   breakdown: { winners: number; runners: number; participation: number };
   logo: string;
   logoScale?: string;
+  instagram?: string;
+  whatsapp?: string;
 };
 
 export const houses: House[] = [
@@ -39,6 +41,8 @@ export const houses: House[] = [
     breakdown: { winners: 0, runners: 0, participation: 0 },
     logo: "/houses/agniyas.png",
     logoScale: "scale-150",
+    instagram: "https://www.instagram.com/agniyas_2k26?igsh=MW9ybDg1NzE0aWNkOQ==",
+    whatsapp: "https://chat.whatsapp.com/EctoGVgsMaCIT8iaKUvyAj",
   },
   {
     name: "Dhronas",
@@ -61,6 +65,8 @@ export const houses: House[] = [
     breakdown: { winners: 0, runners: 0, participation: 0 },
     logo: "/houses/dronas.jpg",
     logoScale: "scale-125",
+    instagram: "https://www.instagram.com/dronas_simmam_2k26?igsh=Z2lqOWY0NWJyZTh0",
+    whatsapp: "https://chat.whatsapp.com/JsziSy6aBgPA55K2efUA30",
   },
   {
     name: "Marutas",
@@ -83,6 +89,8 @@ export const houses: House[] = [
     breakdown: { winners: 0, runners: 0, participation: 0 },
     logo: "/houses/marutas.png",
     logoScale: "scale-150",
+    instagram: "https://www.instagram.com/marutas_2026?igsh=cTQ1MTVlOGs2NDJz&utm_source=qr",
+    whatsapp: "https://chat.whatsapp.com/BBjJjQjtefmHYjZOpxl52x",
   },
   {
     name: "Rudras",
@@ -105,6 +113,8 @@ export const houses: House[] = [
     breakdown: { winners: 0, runners: 0, participation: 0 },
     logo: "/houses/rudras.png",
     logoScale: "scale-150",
+    instagram: "https://www.instagram.com/rudras_2026?igsh=cmxrZ3lleXpkZDM%3D&utm_source=qr",
+    whatsapp: "https://chat.whatsapp.com/EU0IKrCZLA5ChJAmSAwVsb",
   },
   {
     name: "Suryas",
@@ -127,6 +137,8 @@ export const houses: House[] = [
     breakdown: { winners: 0, runners: 0, participation: 0 },
     logo: "/houses/suryas.png",
     logoScale: "scale-150",
+    instagram: "https://www.instagram.com/suryas_2026?igsh=MXI0aTlkZHJ1dnFkeA==",
+    whatsapp: "https://chat.whatsapp.com/JibjI54UQOK3mr1loPgy9N",
   },
   {
     name: "Vajras",
@@ -149,5 +161,7 @@ export const houses: House[] = [
     breakdown: { winners: 0, runners: 0, participation: 0 },
     logo: "/houses/vajras.png",
     logoScale: "scale-125",
+    instagram: "https://www.instagram.com/vajras_2026?igsh=NnV0NjFyMnU2bHE0",
+    whatsapp: "https://chat.whatsapp.com/HtQczeqqEqdANGwnyu95oG",
   },
 ];

@@ -55,31 +55,101 @@ function CaptainsPage() {
             </h1>
           </div>
 
-          {/* Core Team Section */}
-          <div className="mb-24 text-center">
+          {/* Leadership Council Section */}
+          <div className="mb-20 text-center max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: "SURIYA B", role: "PRESIDENT", phone: "9345877019" },
+                { name: "Karthik K", role: "VICE PRESIDENT", phone: "9597164761" },
+                { name: "Siri .N", role: "SECRETARY", phone: "8919385345" },
+                { name: "S. Mohamed Shemar", role: "TREASURER", phone: "7092811416" },
+                { name: "K. Nikhil", role: "JOINT SECRETARY", phone: "9110552253" },
+                { name: "K Harshitha", role: "JOINT TREASURER", phone: "9248431123" }
+              ].map((member) => (
+                <div key={member.role} className="w-full">
+                  <div className="relative glass rounded-2xl p-6 flex flex-col items-center justify-center text-center h-full border border-[#d4af37] hover:bg-white/5 transition-colors">
+                    <div className="text-xs md:text-sm tracking-[0.2em] text-gold mb-2 font-medium">{member.role}</div>
+                    <div className="font-bold text-lg text-white truncate w-full">{formatName(member.name)}</div>
+                    {member.phone && (
+                      <a
+                        href={`tel:${member.phone.replace(/\s/g, "")}`}
+                        className="mt-3 inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold/80"
+                      >
+                        <Phone className="w-3 h-3" /> {member.phone}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Secretaries Section */}
+          <div className="mb-16 text-center">
             <div className="inline-flex items-center gap-3 mb-8">
               <span className="h-px w-10 bg-gradient-to-r from-transparent to-[var(--gold)]" />
               <span className="text-[10px] md:text-xs tracking-[0.4em] text-gold/80">
-                CORE TEAM
+                DEPARTMENTAL SECRETARIES
               </span>
               <span className="h-px w-10 bg-gradient-to-l from-transparent to-[var(--gold)]" />
             </div>
             
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+              {[
+                { name: "Selvakumar K", role: "CULTURAL SECRETARY", phone: "7639072595" },
+                { name: "Ch.Manikanta Yadav", role: "SPORTS SECRETARY", phone: "9381808022" },
+                { name: "Ruso AR", role: "TECH SECRETARY", phone: "9751150111" },
+                { name: "Bharath S", role: "NON-TECH SECRETARY", phone: "6379206320" },
+                { name: "Suraj Alagupandi", role: "MEDIA SECRETARY", phone: "9843974396" },
+                { name: "Siva Visagar R", role: "EXTERNAL AFFAIRS SECRETARY", phone: "6380920806" },
+                { name: "HARIRAM J K", role: "PUBLICITY & MARKETING SECRETARY" },
+                { name: "Likitha", role: "HOSPITALITY SECRETARY", phone: "9704200759" },
+                { name: "D Navya Sree", role: "STUDENT AFFAIRS SECRETARY", phone: "9704200759" },
+                { name: "LINGESH KUMAR V", role: "DISCIPLINARY SECRETARY", phone: "7358614501" }
+              ].map((member) => (
+                <div key={member.role} className="w-full">
+                  <div className="relative glass rounded-2xl p-5 flex flex-col items-center justify-center text-center h-full border border-[#d4af37] hover:bg-white/5 transition-colors">
+                    <div className="text-[10px] tracking-[0.15em] text-gold mb-2 font-medium">{member.role}</div>
+                    <div className="font-bold text-white truncate w-full">{formatName(member.name)}</div>
+                    {member.phone && (
+                      <a
+                        href={`tel:${member.phone.replace(/\s/g, "")}`}
+                        className="mt-3 inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold/80"
+                      >
+                        <Phone className="w-3 h-3" /> {member.phone}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Heads Section */}
+          <div className="mb-16 text-center">
+            <div className="inline-flex items-center gap-3 mb-8">
+              <span className="h-px w-10 bg-gradient-to-r from-transparent to-[var(--gold)]" />
+              <span className="text-[10px] md:text-xs tracking-[0.4em] text-gold/80">
+                DEPARTMENTAL HEADS
+              </span>
+              <span className="h-px w-10 bg-gradient-to-l from-transparent to-[var(--gold)]" />
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
               {[
                 { name: "A GOPI", role: "CULTURAL HEAD" },
-                { name: "S.VAMSIDHAR REDDY", role: "SPORTS HEAD (BOYS)" },
+                { name: "S.vamsidhar reddy", role: "SPORTS HEAD (BOYS)" },
                 { name: "SUJITHA REDDY", role: "SPORTS HEAD (GIRLS)" },
-                { name: "M.THIRUVELAN", role: "INDOOR & ATHLETICS HEAD (BOYS)" },
+                { name: "M.Thiruvelan", role: "INDOOR & ATHLETICS HEAD (BOYS)" },
                 { name: "DIVYA TEJA", role: "INDOOR & ATHLETICS HEAD (GIRLS)" },
-                { name: "MUKESH S", role: "TECH HEAD" },
+                { name: "Mukesh S", role: "TECH HEAD" },
                 { name: "MADHAN S", role: "NON-TECH HEAD" },
-                { name: "SARAH GLADY", role: "EXTERNAL AFFAIRS HEAD" }
+                { name: "Sarah glady", role: "EXTERNAL AFFAIRS HEAD" }
               ].map((member) => (
-                <div key={member.role} className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(25%-0.75rem)] min-w-[200px]">
-                  <div className="relative glass rounded-2xl p-5 flex flex-col items-center justify-center text-center h-full border border-white/5 hover:border-gold/30 transition-colors">
-                    <div className="text-[10px] tracking-[0.15em] text-gold/80 mb-2">{member.role.toUpperCase()}</div>
-                    <div className="font-semibold truncate w-full text-foreground/90">{formatName(member.name)}</div>
+                <div key={member.role} className="w-full">
+                  <div className="relative glass rounded-2xl p-5 flex flex-col items-center justify-center text-center h-full border border-[#d4af37] hover:bg-white/5 transition-colors">
+                    <div className="text-[10px] tracking-[0.15em] text-gold mb-2 font-medium">{member.role}</div>
+                    <div className="font-bold text-white truncate w-full">{formatName(member.name)}</div>
                   </div>
                 </div>
               ))}
