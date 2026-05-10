@@ -3,22 +3,24 @@ import { useNavigate } from "@tanstack/react-router";
 import { Tilt3D } from "./Tilt3D";
 import { X, Search } from "lucide-react";
 import { SectionHeader } from "./Dashboard";
-import { allEvents, type Event } from "../lib/eventsData";
+import { useData } from "../lib/store";
 
 const categories = ["All", "Tech", "Non-Tech", "Sports"];
 
 export function Events() {
   const navigate = useNavigate();
+  const { events } = useData();
   const [filter, setFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<any | null>(null);
 
   const handleRegister = (eventName: string) => {
     setSelectedEvent(null);
     navigate({ to: "/register", search: { event: eventName } });
   };
 
-  const list = allEvents.filter((e) => {
+  const list = events.filter((e) => {
+    if (!e.visibility) return false;
     const matchesCategory = filter === "All" || e.mainCategory === filter;
     const matchesSearch = e.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           e.category.toLowerCase().includes(searchQuery.toLowerCase());

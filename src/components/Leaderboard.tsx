@@ -18,7 +18,8 @@ import {
   Award,
   Clock,
 } from "lucide-react";
-import { houses, type House } from "@/lib/houses";
+import { useData } from "@/lib/store";
+import { type House } from "@/lib/houses";
 
 /* ─── Color Palette ────────────────────────────────────────── */
 
@@ -38,8 +39,7 @@ const C = {
 
 /* ─── helpers ──────────────────────────────────────────────── */
 
-const ranked = [...houses].sort((a, b) => b.points2025 - a.points2025);
-const totalPoints = ranked.reduce((s, h) => s + h.points2025, 0);
+// Helper logic moved inside component to support dynamic data
 
 const ELEMENT_ICONS: Record<string, typeof Flame> = {
   Fire: Flame,
@@ -360,7 +360,7 @@ function PodiumCard({
 
 /* ─── Ranking Table ────────────────────────────────────────── */
 
-function RankingTable() {
+function RankingTable({ ranked }: { ranked: House[] }) {
   return (
     <div
       className="relative rounded-xl overflow-hidden max-w-3xl mx-auto"
@@ -468,7 +468,8 @@ function RankingTable() {
 
 /* ─── Footer Stats Strip ───────────────────────────────────── */
 
-function FooterStats() {
+function FooterStats({ houses, ranked }: { houses: House[], ranked: House[] }) {
+  const totalPoints = useMemo(() => ranked.reduce((s, h) => s + h.points2025, 0), [ranked]);
   const stats = useMemo(
     () => [
       { icon: Users, label: "Total Houses", value: String(houses.length) },
@@ -523,6 +524,9 @@ function FooterStats() {
 /* ─── Main Leaderboard ─────────────────────────────────────── */
 
 export function Leaderboard() {
+  const { houses } = useData();
+  const ranked = useMemo(() => [...houses].sort((a, b) => b.points2025 - a.points2025), [houses]);
+  
   const first = ranked[0];
   const second = ranked[1];
   const third = ranked[2];
@@ -611,9 +615,10 @@ export function Leaderboard() {
               }}
             />
           </div>
-          <RankingTable />
+          <RankingTable ranked={ranked} />
         </div>
 
+        <FooterStats houses={houses} ranked={ranked} />
       </div>
     </section>
   );
