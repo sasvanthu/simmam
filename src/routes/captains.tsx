@@ -137,19 +137,27 @@ function CaptainsPage() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
               {[
-                { name: "A GOPI", role: "CULTURAL HEAD" },
-                { name: "S.vamsidhar reddy", role: "SPORTS HEAD (BOYS)" },
-                { name: "SUJITHA REDDY", role: "SPORTS HEAD (GIRLS)" },
-                { name: "M.Thiruvelan", role: "INDOOR & ATHLETICS HEAD (BOYS)" },
-                { name: "DIVYA TEJA", role: "INDOOR & ATHLETICS HEAD (GIRLS)" },
-                { name: "Mukesh S", role: "TECH HEAD" },
-                { name: "MADHAN S", role: "NON-TECH HEAD" },
-                { name: "Sarah glady", role: "EXTERNAL AFFAIRS HEAD" }
+                { name: "A GOPI", role: "CULTURAL HEAD", phone: "9629481967" },
+                { name: "S.vamsidhar reddy", role: "SPORTS HEAD (BOYS)", phone: "7842873324" },
+                { name: "SUJITHA REDDY", role: "SPORTS HEAD (GIRLS)", phone: "8978841718" },
+                { name: "M.Thiruvelan", role: "INDOOR & ATHLETICS HEAD (BOYS)", phone: "7305850025" },
+                { name: "DIVYA TEJA", role: "INDOOR & ATHLETICS HEAD (GIRLS)", phone: "7396242468" },
+                { name: "Mukesh S", role: "TECH HEAD", phone: "8807835397" },
+                { name: "MADHAN S", role: "NON-TECH HEAD", phone: "7448358124" },
+                { name: "Sarah glady", role: "EXTERNAL AFFAIRS HEAD", phone: "8531037372" }
               ].map((member) => (
                 <div key={member.role} className="w-full">
                   <div className="relative glass rounded-2xl p-5 flex flex-col items-center justify-center text-center h-full border border-[#d4af37] hover:bg-white/5 transition-colors">
                     <div className="text-[10px] tracking-[0.15em] text-gold mb-2 font-medium">{member.role}</div>
                     <div className="font-bold text-white truncate w-full">{formatName(member.name)}</div>
+                    {member.phone && (
+                      <a
+                        href={`tel:${member.phone.replace(/\s/g, "")}`}
+                        className="mt-3 inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold/80"
+                      >
+                        <Phone className="w-3 h-3" /> {member.phone}
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
@@ -237,9 +245,6 @@ function CaptainsPage() {
                     </div>
                     
                     <div>
-                      <div className="text-[10px] tracking-[0.3em] text-foreground/50 mb-1 uppercase">
-                        House of {h.element}
-                      </div>
                       <div className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-2">
                         {h.name}
                       </div>
@@ -298,6 +303,40 @@ function CaptainsPage() {
                 { name: "Roshini R", role: "Product Analyst", phone: "+91 86105 99005" },
                 { name: "Suvedhan G", role: "Full-Stack Developer", phone: "+91 90422 98646" },
                 { name: "Sudharsan R K", role: "Software Developer", phone: "+91 63799 96328" }
+              ].map((member) => (
+                <div key={member.name} className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-auto lg:flex-1 min-w-[200px] max-w-[280px]">
+                  <div className="relative glass rounded-2xl p-5 flex flex-col items-center justify-center text-center h-full border border-white/5 hover:border-gold/30 transition-colors">
+                    <div className="text-[10px] tracking-[0.15em] text-gold/80 mb-2">{member.role.toUpperCase()}</div>
+                    <div className="font-semibold truncate w-full text-foreground/90">{formatName(member.name)}</div>
+                    {member.phone && (
+                      <a
+                        href={`tel:${member.phone.replace(/\s/g, "")}`}
+                        className="mt-3 inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold/80"
+                      >
+                        <Phone className="w-3 h-3" /> {member.phone}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Support Team Section */}
+          <div className="mt-24 text-center">
+            <div className="inline-flex items-center gap-3 mb-8">
+              <span className="h-px w-10 bg-gradient-to-r from-transparent to-[var(--gold)]" />
+              <span className="text-[10px] md:text-xs tracking-[0.4em] text-gold/80">
+                SUPPORT TEAM
+              </span>
+              <span className="h-px w-10 bg-gradient-to-l from-transparent to-[var(--gold)]" />
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              {[
+                { name: "Deepa preya H", role: "Support Team", phone: "+91 63691 18546" },
+                { name: "Swetha C", role: "Support Team", phone: "+91 63748 02604" },
+                { name: "Yamini C G", role: "Support Team", phone: "+91 98404 82978" }
               ].map((member) => (
                 <div key={member.name} className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-auto lg:flex-1 min-w-[200px] max-w-[280px]">
                   <div className="relative glass rounded-2xl p-5 flex flex-col items-center justify-center text-center h-full border border-white/5 hover:border-gold/30 transition-colors">

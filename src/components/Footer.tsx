@@ -93,15 +93,32 @@ export function Footer() {
                 SIMATS Engineering Campus, Chennai, Tamil Nadu
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-gold" />
-                <a href="tel:+919345877019" className="hover:text-gold transition">
-                  +91 93458 77019
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-gold" />
                 <a href="mailto:simmam2026@gmail.com" className="hover:text-gold transition">
                   simmam2026@gmail.com
+                </a>
+              </li>
+              <li className="flex flex-col gap-2 mt-2">
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-gold" />
+                  <span className="text-gold/80 text-xs tracking-wider">PRESIDENT</span>
+                </div>
+                <a href="tel:+919345877019" className="hover:text-gold transition pl-6">
+                  +91 93458 77019 (Suriya B)
+                </a>
+                
+                <div className="flex items-center gap-2 mt-2">
+                  <Phone className="w-4 h-4 text-gold" />
+                  <span className="text-gold/80 text-xs tracking-wider">SUPPORT TEAM</span>
+                </div>
+                <a href="tel:+916369118546" className="hover:text-gold transition pl-6">
+                  +91 63691 18546 (Deepa Preya H)
+                </a>
+                <a href="tel:+916374802604" className="hover:text-gold transition pl-6">
+                  +91 63748 02604 (Swetha C)
+                </a>
+                <a href="tel:+919840482978" className="hover:text-gold transition pl-6">
+                  +91 98404 82978 (Yamini C G)
                 </a>
               </li>
             </ul>

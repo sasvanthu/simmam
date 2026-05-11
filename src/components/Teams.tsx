@@ -84,9 +84,6 @@ export function Teams() {
                     <img src={h.logo} alt={`${h.name} crest`} className={`w-full h-full object-contain ${h.isOriginalShape ? "drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" : "p-1"} ${h.logoScale || "scale-125"}`} />
                   </div>
                   <div>
-                    <div className="text-[10px] tracking-[0.3em] text-foreground/50">
-                      HOUSE OF {h.element.toUpperCase()}
-                    </div>
                     <div className="font-display text-3xl font-bold text-gradient-gold mt-0.5">
                       {h.name}
                     </div>

@@ -23,7 +23,7 @@ export type House = {
 export const houses: House[] = [
   {
     name: "Agniyas",
-    tagline: "The Flame Keepers",
+    tagline: "",
     short: "AGN",
     element: "Fire",
     points2025: 45900,
@@ -48,7 +48,7 @@ export const houses: House[] = [
   },
   {
     name: "Dhronas",
-    tagline: "The Master Strategists",
+    tagline: "",
     short: "DHR",
     element: "Wisdom",
     points2025: 23660,
@@ -73,7 +73,7 @@ export const houses: House[] = [
   },
   {
     name: "Marutas",
-    tagline: "The Wind Riders",
+    tagline: "",
     short: "MAR",
     element: "Wind",
     points2025: 28420,
@@ -98,7 +98,7 @@ export const houses: House[] = [
   },
   {
     name: "Rudras",
-    tagline: "The Storm Bringers",
+    tagline: "",
     short: "RUD",
     element: "Storm",
     points2025: 45140,
@@ -123,7 +123,7 @@ export const houses: House[] = [
   },
   {
     name: "Suryas",
-    tagline: "The Solar Vanguard",
+    tagline: "",
     short: "SUR",
     element: "Sun",
     points2025: 31460,
@@ -148,7 +148,7 @@ export const houses: House[] = [
   },
   {
     name: "Vajras",
-    tagline: "The Thunderbolts",
+    tagline: "",
     short: "VAJ",
     element: "Thunder",
     points2025: 22960,

@@ -182,10 +182,6 @@ export function DashboardLiveScores() {
                             <span className="font-bold text-lg tracking-tight text-foreground/90 uppercase">{house.name}</span>
                             {i === 0 && <Crown className="w-4 h-4 text-gold animate-bounce" />}
                           </div>
-                          <div className="flex items-center gap-1.5 text-[10px] tracking-[0.2em] text-foreground/40 uppercase">
-                            {ElementIcon && <ElementIcon className="w-3 h-3" />}
-                            {house.element}
-                          </div>
                         </div>
                       </div>
                       
