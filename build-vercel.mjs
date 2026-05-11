@@ -74,7 +74,11 @@ for (const dep of needed) {
     const depPkgPath = join(process.cwd(), "node_modules", dep, "package.json");
     if (existsSync(depPkgPath)) {
       const depPkg = JSON.parse(readFileSync(depPkgPath, "utf-8"));
-      runtimeDeps[dep] = depPkg.version;
+      if (dep === "h3-v2") {
+        runtimeDeps[dep] = `npm:h3@${depPkg.version}`;
+      } else {
+        runtimeDeps[dep] = depPkg.version;
+      }
     }
   }
 }
