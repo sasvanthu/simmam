@@ -53,19 +53,20 @@ export function Footer() {
               >
                 <Globe className="w-4 h-4" />
               </a>
-              <span
+              <a
+                href="tel:+919345877019"
                 aria-label="Phone"
                 className="p-2.5 rounded-full glass text-gold hover:text-gold/80 hover:scale-110 transition inline-flex items-center justify-center"
               >
                 <Phone className="w-4 h-4" />
-              </span>
+              </a>
             </div>
           </div>
 
           <div>
             <h4 className="font-display text-sm tracking-[0.3em] text-gold/80 mb-4">QUICK LINKS</h4>
             <ul className="space-y-2 text-sm text-foreground/70">
-              {["Home", "Teams", "Events", "Gallery", "Live Scores", "Faculty"].map((l) => (
+              {["Home", "Teams", "Events", "Gallery", "Live Scores"].map((l) => (
                 <li key={l}>
                   <a
                     href={
@@ -92,12 +93,33 @@ export function Footer() {
                 SIMATS Engineering Campus, Chennai, Tamil Nadu
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-gold" />
-                +91 98765 00000
-              </li>
-              <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-gold" />
-                simmam@simats.edu
+                <a href="mailto:simmam2026@gmail.com" className="hover:text-gold transition">
+                  simmam2026@gmail.com
+                </a>
+              </li>
+              <li className="flex flex-col gap-2 mt-2">
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-gold" />
+                  <span className="text-gold/80 text-xs tracking-wider">PRESIDENT</span>
+                </div>
+                <a href="tel:+919345877019" className="hover:text-gold transition pl-6">
+                  +91 93458 77019 (Suriya B)
+                </a>
+                
+                <div className="flex items-center gap-2 mt-2">
+                  <Phone className="w-4 h-4 text-gold" />
+                  <span className="text-gold/80 text-xs tracking-wider">SUPPORT TEAM</span>
+                </div>
+                <a href="tel:+916369118546" className="hover:text-gold transition pl-6">
+                  +91 63691 18546 (Deepa Preya H)
+                </a>
+                <a href="tel:+916374802604" className="hover:text-gold transition pl-6">
+                  +91 63748 02604 (Swetha C)
+                </a>
+                <a href="tel:+919840482978" className="hover:text-gold transition pl-6">
+                  +91 98404 82978 (Yamini C G)
+                </a>
               </li>
             </ul>
           </div>

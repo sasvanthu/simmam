@@ -16,6 +16,8 @@ export function Hero() {
         <img
           src={heroBg}
           alt=""
+          fetchpriority="high"
+          loading="eager"
           width={1920}
           height={1080}
           className="w-full h-full object-cover opacity-40"
@@ -25,9 +27,9 @@ export function Hero() {
       </div>
 
       {/* Spotlight beams */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
-          className="absolute top-0 left-1/4 w-[600px] h-[120vh] origin-top animate-spotlight-sweep"
+          className="absolute top-0 left-1/4 w-[150vw] sm:w-[600px] h-[120vh] origin-top animate-spotlight-sweep"
           style={{
             background:
               "linear-gradient(180deg, oklch(0.78 0.16 80 / 0.35), transparent 70%)",
@@ -35,7 +37,7 @@ export function Hero() {
           }}
         />
         <div
-          className="absolute top-0 right-1/4 w-[600px] h-[120vh] origin-top animate-spotlight-sweep"
+          className="absolute top-0 right-1/4 w-[150vw] sm:w-[600px] h-[120vh] origin-top animate-spotlight-sweep"
           style={{
             background:
               "linear-gradient(180deg, oklch(0.55 0.22 27 / 0.35), transparent 70%)",
@@ -49,7 +51,7 @@ export function Hero() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* Badge & Social Floaters */}
-        <div className="flex flex-row items-center justify-center gap-6 mb-8 animate-rise-in mx-auto w-fit max-w-full">
+        <div className="flex flex-row flex-wrap items-center justify-center gap-4 sm:gap-6 mb-8 animate-rise-in mx-auto w-fit max-w-full">
           <svg width="0" height="0" className="absolute">
             <linearGradient id="instagram-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
               <stop stopColor="#f09433" offset="0%" />
@@ -76,7 +78,7 @@ export function Hero() {
           </div>
 
           <a
-            href="[Insert Link]"
+            href="https://chat.whatsapp.com/HQ5y2OLDWj8GmsBIHsxt4s"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#25D366] hover:scale-110 transition-transform duration-300 drop-shadow-md hover:drop-shadow-lg"
@@ -92,7 +94,7 @@ export function Hero() {
 
         {/* Title */}
         <h1
-          className="font-display text-[clamp(3.5rem,12vw,9rem)] leading-[0.95] font-black text-gradient-fire animate-rise-in -mt-6 md:-mt-10 relative z-10"
+          className="font-display text-[clamp(2.5rem,12vw,9rem)] leading-[0.95] font-black text-gradient-fire animate-rise-in -mt-6 md:-mt-10 relative z-10"
           style={{ animationDelay: ".2s" }}
         >
           SIMMAM
